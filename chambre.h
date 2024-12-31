@@ -16,6 +16,7 @@ public:
 	void set_number(int number) ;
 	void set_type(std::string type);
 	void set_price(int price);
+	bool operator==(const Chambre& chambre) ;
 };
 
 

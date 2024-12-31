@@ -12,6 +12,10 @@ std::string Chambre::get_type() const {
 	return _type;
 }
 
+bool Chambre::operator==(const Chambre& chambre) {
+	return ((this->_number == chambre.get_number()) && (this->_type == chambre.get_type()) && (this->_price == chambre.get_price()) );
+}
+
 int Chambre::get_price() const {
 	return _price;
 }
@@ -38,4 +42,4 @@ void Chambre::set_price(int price) {
 	std::cout << b.get_number() << std::endl;
 	std::cout << b.get_type() << std::endl;
 	std::cout << b.get_price() << std::endl;
-}
+} **/
