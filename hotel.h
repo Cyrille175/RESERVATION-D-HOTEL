@@ -14,9 +14,13 @@ public:
 	std::string get_name() const;
 	std::string get_city() const;
 	void add_chambre(const Chambre& chambre);
+	int get_price_chambre(int number)const; //trouver le prix d'une chambre connaissant son numero
 	void delete_chambre(const Chambre& chambre);
 	void display_list_chambre() const;
 };
+
+
+	
 
 
 #endif

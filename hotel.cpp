@@ -32,6 +32,13 @@ void Hotel::delete_chambre(const Chambre& chambre_delete) {
 	}
 }
 
+int Hotel::get_price_chambre(int number) const {
+	auto it = std::find_if(_chambres.begin(), _chambres.end(), [&number](const Chambre& chambre) {
+		return chambre.get_number() == number;
+		});
+	return it->get_price();
+}
+
 void Hotel::display_list_chambre() const {
 	for (auto chambre : _chambres) {
 		std::cout << chambre.get_number() << "   " << chambre.get_type() << "    " << chambre.get_price() << " dollars" << std::endl;
