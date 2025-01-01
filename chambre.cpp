@@ -31,11 +31,18 @@ void Chambre::set_price(int price) {
 	_price = price;
 }
 
-/** int main() {
+std::ostream& operator<<(std::ostream& os, const Chambre& chambre) {
+	os << std::endl << "Numero de chamnbre: " << chambre.get_number() << std::endl << "Type de la chambre: " << chambre.get_type() << std::endl << "Prix de la chambre: " << chambre.get_price() << std::endl;
+	return os;
+}
+
+
+ /** int main() {
 	Chambre b(14, "presidentiel", 1500);
-	std::cout << b.get_number() << std::endl ;
+	std::cout << b.get_number() << std::endl;
 	std::cout << b.get_type() << std::endl;
 	std::cout << b.get_price() << std::endl;
+	std::cout << b << std::endl;
 	b.set_number(16);
 	b.set_type("luxe");
 	b.set_price(1600);

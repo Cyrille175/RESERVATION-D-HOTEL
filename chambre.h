@@ -17,6 +17,7 @@ public:
 	void set_type(std::string type);
 	void set_price(int price);
 	bool operator==(const Chambre& chambre) ;
+	friend std::ostream& operator<<(std::ostream& os, const Chambre& chambre);
 };
 
 
