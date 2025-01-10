@@ -15,6 +15,7 @@ public:
 	std::string get_first_name() const;
 	std::string get_last_name() const;
 	void set_last_name(std::string name);
+	friend std::ostream& operator<<(std::ostream& os, const Client& c);
 };
 
 

@@ -19,7 +19,10 @@ void Client::set_last_name(std::string name) {
 	_last_name = name;
 }
 
-
+std::ostream& operator<<(std::ostream& os, const Client& c) {
+	os << c._id << "     " << c._first_name << "      " << c._last_name << std::endl;
+	return os;
+}
 
 /** int main() {
 	Client a(2, "Maeva", "Mamitite");

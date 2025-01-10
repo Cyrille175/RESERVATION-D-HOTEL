@@ -1,7 +1,7 @@
 #include "chambre.h"
 
 Chambre::Chambre(int number, std::string type, int price) : _number(number), _type(type), _price(price) {
-
+	_state = false ;
 }
 
 int Chambre::get_number() const {
@@ -10,6 +10,10 @@ int Chambre::get_number() const {
 
 std::string Chambre::get_type() const {
 	return _type;
+}
+
+bool Chambre::get_state() const {
+	return _state;
 }
 
 bool Chambre::operator==(const Chambre& chambre) {
@@ -36,6 +40,9 @@ std::ostream& operator<<(std::ostream& os, const Chambre& chambre) {
 	return os;
 }
 
+void Chambre::change_state() {
+	_state = !(_state);
+}
 
  /** int main() {
 	Chambre b(14, "presidentiel", 1500);

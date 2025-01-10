@@ -65,6 +65,10 @@ std::string Date::display_date() const {
     else return "Date non fournie";
 }
 
+bool Date::check() const {
+    return _check;
+}
+
 void Date::edit_date(int day, int month, int year) {
     if (IsDate(day, month, year)) {
         _month = month;

@@ -1,6 +1,6 @@
 #include "reservation.h"
 
-Reservation::Reservation(int day, int month, int year, int number_of_nights, std::string id_hotel, int number_chambre) : _date_begin(day, month, year), _number_of_nights(number_of_nights), _id_hotel(id_hotel), _number_chambre(number_chambre) {
+Reservation::Reservation(int id_client, int day, int month, int year, int number_of_nights, std::string id_hotel, int number_chambre) : _id_client(id_client), _date_begin(day, month, year), _number_of_nights(number_of_nights), _id_hotel(id_hotel), _number_chambre(number_chambre) {
 
 }
 
@@ -40,3 +40,7 @@ void Reservation::modify_stay(const Date& date, int night_number) {
 	else std::cout << "Verifier votre nombre de nuits" << std::endl;
 }
 
+std::ostream& operator<<(std::ostream& os, const Reservation& r) {
+	os << "\n" << "Reservation de la chambre " << r._number_chambre << " de l'hotel d'identifiant " << r._id_hotel << " pour " << r._number_of_nights << " nuits a partir du " << r._date_begin.display_date() << " par le client " << r._id_client << std::endl;
+	return os;
+}

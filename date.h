@@ -18,6 +18,7 @@ public:
     bool IsDate(int day, int month, int year) const;
 
     std::string display_date() const;
+    bool check() const;
     int get_day() const;
     int get_month() const;
     int get_year() const;
